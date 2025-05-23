@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - House
+  - Bed
+  - Door1
+  - Door2
+  - Door3
+  - Attic
+  - BulltinBoard
+  - Drawer1
+  - Drawer2
+  - Stairs
   layers:
   - Default
   - TransparentFX
