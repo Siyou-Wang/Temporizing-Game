@@ -18,6 +18,10 @@ TagManager:
   - BackDown
   - BackRight
   - BackFarLeft
+  - Cave
+  - Forest
+  - IntoCave
+  - Safe
   layers:
   - Default
   - TransparentFX
