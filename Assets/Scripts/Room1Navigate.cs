@@ -32,11 +32,16 @@ public class Room1Navigate : MonoBehaviour
                 if (hit.collider.gameObject.tag == "House") {
                     Camera.main.transform.position = new Vector3(0, 20, -10);
                 }
-                if (hit.collider.gameObject.tag == "Attic" && day >= 3)
+                if (hit.collider.gameObject.tag == "Attic" && day >= 3 && CaveNavigate.returnKey())
                 {
                     Camera.main.transform.position = new Vector3(-40, 20, -10);
                 }
-                else if (hit.collider.gameObject.tag == "Attic") {
+                else if (hit.collider.gameObject.tag == "Attic" && day < 3)
+                {
+
+                }
+                else if (hit.collider.gameObject.tag == "Attic" && !CaveNavigate.returnKey())
+                {
 
                 }
                 if (hit.collider.gameObject.tag == "Bed")

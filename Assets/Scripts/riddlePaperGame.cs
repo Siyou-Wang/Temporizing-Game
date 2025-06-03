@@ -74,8 +74,8 @@ public class riddlePaperGame : MonoBehaviour
 
         if (paperLowerLeft && paperLowerRight && paperUpperLeft && paperUpperRight) {
             if (!text) {
-                text = dMan.ShowBox(puzzleComplete);
-                text = false;
+                //text = dMan.ShowBox(puzzleComplete);
+                //text = false;
             
             }
         }
