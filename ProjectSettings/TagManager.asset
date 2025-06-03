@@ -22,6 +22,19 @@ TagManager:
   - Forest
   - IntoCave
   - Safe
+  - One
+  - Two
+  - Three
+  - Four
+  - Five
+  - Six
+  - Seven
+  - Eight
+  - Nine
+  - Enter
+  - Delete
+  - Key
+  - Zero
   layers:
   - Default
   - TransparentFX
