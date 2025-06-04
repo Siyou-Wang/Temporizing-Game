@@ -5,9 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class CaveNavigate : MonoBehaviour
 {
+    
+    private string[] caveDialogue1 = {"You: Maybe I should look inside.", "You: Wow. It’s so dark here. Let’s go explore."};
+    private string[] caveDialogue3 = {"You: What’s this, a safe? What could be inside? It looks like I need a pin."};
+    private string[] caveDialogue4 = {"You: Whoa! It opened!", "You: That key looks important…I should keep it. I wonder what it opens…"};
+    private string[] caveDialogue5 = {"You: Oh look! That's the way I came. The house is back that way."};
+
+    private bool text1 = false;
+    private bool text3 = false;
+    private bool text4 = false;
+    private bool text5 = false;
+    
     private DialogueManager dMan;
-    private string[] message = { "Huh"};
-    private bool textShow = false;
     private static bool keyComplete = false;
 
 
@@ -34,12 +43,16 @@ public class CaveNavigate : MonoBehaviour
                 if (hit.collider.gameObject.tag == "IntoCave")
                 {
                     Camera.main.transform.position = new Vector3(40, 0, -10);
+                    if (!text1)
+                    {
+                        text1 = dMan.ShowBox(caveDialogue1);
+                    }
                 }
                 if (hit.collider.gameObject.tag == "Forest")
                 {
-                    if (!textShow)
+                    if (!text5)
                     {
-                        textShow = dMan.ShowBox(message);
+                        text5 = dMan.ShowBox(caveDialogue5);
 
                     }
                 }
@@ -47,6 +60,10 @@ public class CaveNavigate : MonoBehaviour
                 {
                     keyComplete = true;
                     Debug.Log("Collected!");
+                    if (!text4)
+                    {
+                        text4 = dMan.ShowBox(caveDialogue4);
+                    }
                     
                 }
                 if (hit.collider.gameObject.tag == "BackHome")
@@ -61,6 +78,10 @@ public class CaveNavigate : MonoBehaviour
                 if (hit.collider.gameObject.tag == "Safe")
                 {
                     Camera.main.transform.position = new Vector3(40, 20, -10);
+                    if (!text3)
+                    {
+                        text3 = dMan.ShowBox(caveDialogue3);
+                    }
                 }
                 if (hit.collider.gameObject.tag == "BackLeft")
                 {

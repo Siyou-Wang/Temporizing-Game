@@ -8,7 +8,13 @@ public class FinalFight : MonoBehaviour
     private Transform player;
     private Transform monster;
 
+    private string[] room1Dialogue13 = {"You break the door down with your chair and are greeted by an empty house. Your family is still missing.",
+        "Faintly, you hear quick footsteps approaching the house. It seems your trials are not yet over…"};
+    private string[] room1Dialogue14 = {"You were the monster’s next meal.", "As you slowly succumb to your wounds, you see eerily familiar eyes lining the monster's throat. You see them twitch to face you, then start to water. Mom…?"
+        };
     
+    private bool dialogue13 = false;
+    private bool dialogue14 = false;
 
     private int playerH;
     private int monsterH;
@@ -39,12 +45,21 @@ public class FinalFight : MonoBehaviour
 
         if(playerH <= 0)
         {
+            if (!dialogue14)
+            {
+                dialogue14 = dMan.ShowBox(room1Dialogue14);
+
+            }
             //DIALOUGE
             Debug.Log("Lost");
-
         }
         if(monsterH <= 0)
         {
+            if (!dialogue13)
+            {
+                dialogue13 = dMan.ShowBox(room1Dialogue13);
+
+            }
             //DIALOUGE
             Debug.Log("Win");
         }
