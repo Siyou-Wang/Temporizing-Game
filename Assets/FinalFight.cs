@@ -5,8 +5,10 @@ using UnityEngine;
 public class FinalFight : MonoBehaviour
 {
 
+
     private Transform player;
     private Transform monster;
+    private DialogueManager dMan;
 
     private string[] room1Dialogue13 = {"You break the door down with your chair and are greeted by an empty house. Your family is still missing.",
         "Faintly, you hear quick footsteps approaching the house. It seems your trials are not yet over…"};
@@ -26,6 +28,7 @@ public class FinalFight : MonoBehaviour
         monster = GameObject.Find("Monster").transform;
         playerH = 50;
         monsterH = 25;
+        dMan = FindAnyObjectByType<DialogueManager>();
     }
 
     // Update is called once per frame

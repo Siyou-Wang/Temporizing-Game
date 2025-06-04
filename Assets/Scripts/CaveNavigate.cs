@@ -10,12 +10,14 @@ public class CaveNavigate : MonoBehaviour
     private string[] caveDialogue3 = {"You: What’s this, a safe? What could be inside? It looks like I need a pin."};
     private string[] caveDialogue4 = {"You: Whoa! It opened!", "You: That key looks important…I should keep it. I wonder what it opens…"};
     private string[] caveDialogue5 = {"You: Oh look! That's the way I came. The house is back that way."};
+    private string[] caveD = { "This is really isolated..." };
 
     private bool text1 = false;
     private bool text3 = false;
     private bool text4 = false;
     private bool text5 = false;
-    
+    private bool text0 = false;
+
     private DialogueManager dMan;
     private static bool keyComplete = false;
 
@@ -25,6 +27,10 @@ public class CaveNavigate : MonoBehaviour
     void Start()
     {
         dMan = FindAnyObjectByType<DialogueManager>();
+        if (!text0)
+        {
+            text0 = dMan.ShowBox(caveD);
+        }
     }
 
     // Update is called once per frame

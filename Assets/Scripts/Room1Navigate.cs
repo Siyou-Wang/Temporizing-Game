@@ -26,6 +26,7 @@ public class Room1Navigate : MonoBehaviour
         "You: YOU ATE MY FAMILY!", "The monster makes a wet squelching noise as it moves towards you, angling its great body towards the sound of your voice.",
         "You: I better run or I’m next.", "Door: Click.", "You: NO! The door is locked! This is the end!!", "You: If I’m here, I might as well avenge my family. I have this chair and I’m not afraid to use it.",
         "The monster growls in challenge."};
+    private string[] di = { "It's certainly...something"};
     
 
         private bool dialogue0 = false;
@@ -37,7 +38,8 @@ public class Room1Navigate : MonoBehaviour
         private bool dialogue5 = false;
         private bool dialogue8 = false;
         private bool dialogue9 = false;
-        
+
+        private bool dialogue = false;
 
 
     private DialogueManager dMan;
@@ -45,18 +47,46 @@ public class Room1Navigate : MonoBehaviour
     private bool textShow = false;
     private int day = 0;
 
+    private Vector3 targetPos = new Vector3(0, 20, -10);
     private bool d1Done = false;
     private bool d2Done = false;
+    private GameObject dad;
+    private GameObject mom;
+    private GameObject sister;
+
 
     // Start is called before the first frame update
     void Start()
     {
         dMan = FindAnyObjectByType<DialogueManager>();
+        if (!dialogue)
+        {
+            dialogue = dMan.ShowBox(di);
+
+        }
+
+        dad = GameObject.Find("Dad");
+        mom = GameObject.Find("Mom");
+        sister = GameObject.Find("Sister");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(day >= 1) {
+            sister.SetActive(false);
+
+        }
+        if(day >= 2)
+        {
+            mom.SetActive(false);
+
+        }
+        if(day >= 3)
+        {
+            dad.SetActive(false);
+        }
+
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
@@ -122,7 +152,7 @@ public class Room1Navigate : MonoBehaviour
                 {
                     Camera.main.transform.position = new Vector3(0, 40, -10);
                 }
-                if (day==1 && camera.main.position == (0, 20, -10))
+                if (day==1 && Camera.main.transform.position == targetPos)
                 {
                     if (!dialogue4)
                     {
@@ -142,7 +172,7 @@ public class Room1Navigate : MonoBehaviour
                 {
                     Camera.main.transform.position = new Vector3(40, 20, -10);
                 }
-                if (day==2 && camera.main.position == (0, 20, -10))
+                if (day==2 && Camera.main.transform.position == targetPos)
                 {
                     if (!dialogue8)
                     {
