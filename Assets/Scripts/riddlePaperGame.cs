@@ -22,7 +22,7 @@ public class riddlePaperGame : MonoBehaviour
     private bool paperLowerLeft = false;
     private bool paperLowerRight = false;
 
-    private DialougeManager dMan;
+    private DialogueManager dMan;
 
     // Start is called before the first frame update
     void Start()

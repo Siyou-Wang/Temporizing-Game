@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CaveNavigate : MonoBehaviour
 {
-    private DialougeManager dMan;
-    private string[] message = new string[1];
+    private DialogueManager dMan;
+    private string[] message = { "Huh"};
     private bool textShow = false;
     private static bool keyComplete = false;
 
@@ -14,7 +15,7 @@ public class CaveNavigate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dMan = FindAnyObjectByType<DialougeManager>();
+        dMan = FindAnyObjectByType<DialogueManager>();
     }
 
     // Update is called once per frame
@@ -36,7 +37,11 @@ public class CaveNavigate : MonoBehaviour
                 }
                 if (hit.collider.gameObject.tag == "Forest")
                 {
-                    //DIALOUGE
+                    if (!textShow)
+                    {
+                        textShow = dMan.ShowBox(message);
+
+                    }
                 }
                 if (hit.collider.gameObject.tag == "Key")
                 {
@@ -44,13 +49,18 @@ public class CaveNavigate : MonoBehaviour
                     Debug.Log("Collected!");
                     
                 }
+                if (hit.collider.gameObject.tag == "BackHome")
+                {
+                    SceneManager.LoadScene("House", LoadSceneMode.Single);
+                }
+
                 if (hit.collider.gameObject.tag == "Cave")
                 {
                     Camera.main.transform.position = new Vector3(20, 0, -10);
                 }
                 if (hit.collider.gameObject.tag == "Safe")
                 {
-                    Camera.main.transform.position = new Vector3(40, 15, -10);
+                    Camera.main.transform.position = new Vector3(40, 20, -10);
                 }
                 if (hit.collider.gameObject.tag == "BackLeft")
                 {

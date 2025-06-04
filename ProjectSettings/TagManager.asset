@@ -35,6 +35,8 @@ TagManager:
   - Delete
   - Key
   - Zero
+  - LeaveHouse
+  - BackHome
   layers:
   - Default
   - TransparentFX
