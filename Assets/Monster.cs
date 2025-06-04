@@ -15,6 +15,7 @@ public class Monster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Sets monster sprite and monster/player gameObjects
         monsterSprite = gameObject.GetComponent<SpriteRenderer>();
         player = GameObject.Find("Player").transform;
         monster = GameObject.Find("Monster").transform;
@@ -23,6 +24,7 @@ public class Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Sets sprites and monster attack if the player moves too much
         Vector3 distance1 = player.position - monster.position;
         float magnitude = distance1.magnitude;
         if (magnitude < 0.5)

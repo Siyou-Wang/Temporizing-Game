@@ -39,6 +39,7 @@ public class riddlePaperGame : MonoBehaviour
     }
 
     // Update is called once per frame
+    //Checks for distance between gameObjects for the puzzle
     void Update()
     {
         Vector3 distance1 = upperLeft.position - upperLeftPos.position;
@@ -72,6 +73,7 @@ public class riddlePaperGame : MonoBehaviour
             lowerRight.position = lowerRightPos.position;
         }
 
+        //Was used to check for completion, left out of actual game
         if (paperLowerLeft && paperLowerRight && paperUpperLeft && paperUpperRight) {
             if (!text) {
                 //text = dMan.ShowBox(puzzleComplete);

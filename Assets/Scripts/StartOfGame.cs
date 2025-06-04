@@ -30,7 +30,7 @@ public class StartOfGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Displays dialouge and checks for user's clicks to start the game
         if (!compText)
         {
             compText = dMan.ShowBox(opening);

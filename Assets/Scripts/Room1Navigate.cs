@@ -58,6 +58,7 @@ public class Room1Navigate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Finds the dialouge manager when the scene starts
         dMan = FindAnyObjectByType<DialogueManager>();
         if (!dialogue)
         {
@@ -73,6 +74,7 @@ public class Room1Navigate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Checks the day of the game
         if(day >= 1) {
             sister.SetActive(false);
 
@@ -91,6 +93,7 @@ public class Room1Navigate : MonoBehaviour
             day = 4;
         }
 
+        //Click-checks for navigation
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 

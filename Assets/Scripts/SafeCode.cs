@@ -26,6 +26,7 @@ public class SafeCode : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
+        //Code for safe game, all click-check for user input
         if (Input.GetMouseButtonDown(0))
         {
             if (hit.collider != null)
@@ -88,6 +89,7 @@ public class SafeCode : MonoBehaviour
                 }
             }
         }
+        //sets key inactive when clicked
         if (CaveNavigate.returnKey()) {
             key.SetActive(false);
         }

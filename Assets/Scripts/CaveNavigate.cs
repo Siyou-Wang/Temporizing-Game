@@ -36,6 +36,7 @@ public class CaveNavigate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Mostly click checks for naviagtion and the safe puzzle
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
@@ -108,7 +109,7 @@ public class CaveNavigate : MonoBehaviour
             }
         }
     }
-
+    //Returns true if the game is finished
     public static bool returnKey() {
         return keyComplete;
     }

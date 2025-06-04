@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Sprite changes for user movement
         if (Input.GetKeyDown(KeyCode.W))
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + 2, 1);
@@ -51,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    //Return functions for fight, checks how much the user moves
     public static int returnSteps()
     {
         return steps;

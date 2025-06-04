@@ -34,6 +34,7 @@ public class FinalFight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Takes damage if the player is too close to the monster
         Vector3 distance1 = player.position - monster.position;
         float magnitude = distance1.magnitude;
         if (magnitude < 0.5) {
@@ -41,6 +42,7 @@ public class FinalFight : MonoBehaviour
             PlayerMovement.setSteps();
           
         }
+        //Code for the player's role in fight, as well as dialogue for winning/losing
         if (Input.GetKeyDown(KeyCode.Q)){
             monsterH -= 3;
             PlayerMovement.addSteps();

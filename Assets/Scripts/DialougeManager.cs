@@ -20,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Checkes if activly in dialogue and if user is pressing space to move on
         if(dialougeActive && Input.GetKeyDown(KeyCode.Space))
         {
             if (count == strings.Length) {
@@ -34,6 +35,7 @@ public class DialogueManager : MonoBehaviour
       
     }
 
+    //Shows the next piece of dialouge
     public bool ShowBox(string[] dialouge) {
         dialougeActive = true;
         background.SetActive(true);
