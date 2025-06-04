@@ -86,6 +86,10 @@ public class Room1Navigate : MonoBehaviour
         {
             dad.SetActive(false);
         }
+        if (CaveNavigate.returnKey())
+        {
+            day = 4;
+        }
 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
