@@ -10,10 +10,9 @@ public class DialogueManager : MonoBehaviour
 
 
     bool dialougeActive = false;
-    
 
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
         
     }
